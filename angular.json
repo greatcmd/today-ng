@@ -5,7 +5,11 @@
   "projects": {
     "today-ng": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -21,10 +25,16 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/theme.less",
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -119,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "today-ng"
 }
