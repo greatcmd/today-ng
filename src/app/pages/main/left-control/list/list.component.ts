@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
   addListModalvisible = false;
   renameListModalvisible = false;
 
-  // private dropdown: NzDropdownMenuComponent;
+  private dropdown: NzDropdownMenuComponent;
   private destroy$ = new Subject();
 
   constructor(
@@ -72,6 +72,7 @@ export class ListComponent implements OnInit {
   }
 
   contextMenu($event: MouseEvent, template: NzDropdownMenuComponent, uuid: string): void{
+    this.dropdown = template;
     this.dropdownService.create($event,template);
     this.contextListUuid = uuid;
   }
