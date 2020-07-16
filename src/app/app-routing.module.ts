@@ -6,6 +6,7 @@ import { InitGuardService } from './services/init-guard/init-guard.service';
 
 const routes: Routes = [
   { path: 'setup', component: SetupComponent, canActivate: [ InitGuardService ] },
+  { path: 'summary', redirectTo: '/summary', pathMatch: 'full' },
   { path: 'main', redirectTo: '/main', pathMatch: 'full'},
   { path: '', redirectTo:'/main', pathMatch:'full' }
 ];

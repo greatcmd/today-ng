@@ -17,6 +17,8 @@ import zh from '@angular/common/locales/zh';
 // modules
 import {SetupModule} from './pages/setup/setup.module';
 import {MainModule } from './pages/main/main.module';
+import {SummaryModule } from './pages/summary/summary.module';
+
 
 // services
 import { LocalStorageService } from './services/local-storage/local-storage.service';
@@ -41,7 +43,8 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     SetupModule,
-    MainModule
+    MainModule,
+    SummaryModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'zh-Hans' },

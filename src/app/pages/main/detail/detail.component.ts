@@ -11,11 +11,13 @@ import { NzMessageService } from 'ng-zorro-antd';
 import { TodoService } from '../../../services/todo/todo.service';
 import { Todo } from '../../../../domain/entities';
 import { lessThanADay, floorToDate, getCurrentTime, getTodayTime, floorToMinute } from '../../../../utils/time';
+import {detailTransition } from './detail.animation';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: [ './detail.component.less' ]
+  styleUrls: [ './detail.component.less' ],
+  animations: [ detailTransition ]
 })
 export class DetailComponent implements OnInit {
   @Output() changedTodo = new EventEmitter();

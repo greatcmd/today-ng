@@ -118,4 +118,8 @@ export class TodoComponent implements OnInit, OnDestroy {
   close(): void {
     this.dropdownService.close();
   }
+
+  todoLength():number {
+    return this.todos.length;
+  }
 }

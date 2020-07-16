@@ -11,10 +11,11 @@ import { ListComponent } from './list/list.component';
   styleUrls: ['./left-control.component.less']
 })
 export class LeftControlComponent implements OnInit {
-  @Input() isCollapsed:boolean;
+  @Input() isCollapsed: boolean;
   @ViewChild(ListComponent) listComponent: ListComponent;
 
   username: string;
+  router: Router;
 
   constructor(
     private store: LocalStorageService
@@ -27,6 +28,14 @@ export class LeftControlComponent implements OnInit {
   openAddListModal(): void {
     // 在Angular中调用子组件
     this.listComponent.openAddListModal();
+  }
+
+  goSetting(): void {
+    this.router.navigateByUrl('/setting');
+  }
+
+  goSummary(): void {
+    this.router.navigateByUrl('/summary');
   }
 
 }
